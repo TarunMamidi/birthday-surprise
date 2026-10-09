@@ -41,8 +41,9 @@ function App() {
       <Hero />
       <FoodAdventures />
       <Memories />
-      <FoodGames />
       <BirthdayLetter />
+      <FoodGames />
+      
 
       <footer className="footer">
         <p>Made with 💛, memories, and a little bit of code.</p>
