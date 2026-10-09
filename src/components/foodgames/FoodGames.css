@@ -1,0 +1,386 @@
+
+.food-games-section {
+  padding: 90px 8%;
+  background: #fffaf0;
+  text-align: center;
+  scroll-margin-top: 100px;
+}
+
+.food-games-section h2 {
+  margin: 16px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.2;
+}
+
+.food-games-section h2 span {
+  color: #b88700;
+}
+
+.food-games-intro {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  color: #77685c;
+  line-height: 1.8;
+}
+
+.food-game-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.food-game-card {
+  min-width: 0;
+  padding: 28px 20px;
+  border: 2px solid transparent;
+  border-radius: 24px;
+  color: #49362b;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.food-game-card:hover {
+  transform: translateY(-7px) rotate(-1deg);
+  box-shadow: 0 14px 30px #49362b15;
+}
+
+.food-game-card:focus-visible,
+.game-button:focus-visible,
+.coffee-option:focus-visible,
+.ingredient-button:focus-visible {
+  outline: 3px solid #b88700;
+  outline-offset: 3px;
+}
+
+.dumpling-game {
+  background: #fff0c9;
+}
+
+.pret-game {
+  background: #f5e4d6;
+}
+
+.pho-game {
+  background: #dfeccb;
+}
+
+.game-card-emoji {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 3.5rem;
+}
+
+.food-game-card h3,
+.active-game-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+}
+
+.food-game-card p {
+  min-height: 54px;
+  color: #77685c;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.play-label {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.game-panel {
+  max-width: 720px;
+  margin: auto;
+  padding: 24px;
+  border: 1px solid #f0e4c9;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 12px 40px #49362b0c;
+}
+
+.back-button {
+  display: block;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: #795d23;
+  font: inherit;
+  cursor: pointer;
+}
+
+.active-game-title {
+  margin: 10px 0 24px;
+}
+
+.mini-game {
+  padding-bottom: 12px;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: #fff5d5;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.game-instructions {
+  padding: 35px 12px;
+}
+
+.big-game-emoji {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 4rem;
+}
+
+.game-instructions h3,
+.coffee-order h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+}
+
+.game-instructions p {
+  color: #77685c;
+  line-height: 1.8;
+}
+
+.game-button {
+  margin-top: 12px;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 30px;
+  background: #49362b;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.game-button:hover {
+  transform: translateY(-2px);
+}
+
+.game-button.secondary {
+  margin-left: 8px;
+  background: #f3e6c6;
+  color: #49362b;
+}
+
+.dumpling-arena {
+  position: relative;
+  height: 330px;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff8e5;
+}
+
+.arena-tip {
+  padding: 12px;
+  color: #77685c;
+  font-size: 0.85rem;
+}
+
+.moving-dumpling {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffe6a0;
+  font-size: 2rem;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  animation: dumpling-pop 0.18s ease-out;
+  touch-action: manipulation;
+}
+
+@keyframes dumpling-pop {
+  from { scale: 0.6; }
+  to { scale: 1; }
+}
+
+.order-label {
+  margin: 12px 0;
+  color: #997516;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.coffee-order {
+  padding: 25px 5px;
+}
+
+.coffee-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.coffee-option,
+.ingredient-button {
+  padding: 14px 10px;
+  border: 1px solid #eedfbd;
+  border-radius: 14px;
+  background: #fffaf0;
+  color: #49362b;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.coffee-option:hover,
+.ingredient-button:hover:not(:disabled) {
+  background: #fff0b2;
+  transform: translateY(-2px);
+}
+
+.game-feedback {
+  min-height: 28px;
+  margin-top: 18px;
+  color: #80631b;
+  font-size: 0.9rem;
+}
+
+.recipe-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.recipe-item {
+  display: grid;
+  gap: 6px;
+  min-width: 95px;
+  padding: 15px;
+  border-radius: 14px;
+  background: #fff3bb;
+}
+
+.recipe-item span {
+  font-size: 1.6rem;
+}
+
+.recipe-item small {
+  font-size: 0.75rem;
+}
+
+.pho-game-area > p:not(.order-label) {
+  color: #77685c;
+  line-height: 1.7;
+}
+
+.ingredient-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.ingredient-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ingredient-button span {
+  font-size: 1.3rem;
+}
+
+.ingredient-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-win {
+  padding: 32px 12px;
+  animation: win-appear 0.4s ease both;
+}
+
+.win-stars {
+  font-size: 2rem;
+}
+
+.game-win h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+}
+
+.game-win p {
+  color: #77685c;
+  line-height: 1.8;
+}
+
+.win-note {
+  padding: 14px;
+  border-radius: 14px;
+  background: #fff5d5;
+}
+
+.game-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes win-appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  .food-games-section {
+    padding: 65px 6%;
+  }
+
+  .food-game-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .food-game-card {
+    padding: 22px;
+  }
+
+  .food-game-card p {
+    min-height: auto;
+  }
+
+  .game-panel {
+    padding: 16px;
+  }
+
+  .dumpling-arena {
+    height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-game-card,
+  .moving-dumpling,
+  .game-win {
+    animation: none;
+    transition: none;
+  }
+}
