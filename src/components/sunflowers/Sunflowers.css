@@ -59,6 +59,13 @@
   animation-delay: -2.5s;
 }
 
+.floating-sunflower {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-family: inherit;
+}
+
 @keyframes sunflower-drift {
   0%, 100% {
     transform: translateY(0) rotate(-12deg);
@@ -86,3 +93,4 @@
     animation: none;
   }
 }
+

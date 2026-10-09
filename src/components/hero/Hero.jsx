@@ -3,7 +3,7 @@ import React from "react";
 
 function Hero() {
   const exploreMemories = () => {
-    document.getElementById("food")?.scrollIntoView({
+    document.getElementById("food-adventures")?.scrollIntoView({
       behavior: "smooth",
     });
   };

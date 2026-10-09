@@ -1,5 +1,6 @@
 
 import './Sunflowers.css';
+import useMagicBurst from '../../hooks/MagicBurst';
 
 const flowers = [
   { id: 1, className: 'sunflower-one', size: '24px' },
@@ -12,16 +13,21 @@ const flowers = [
 ];
 
 export default function Sunflowers() {
+  const burst = useMagicBurst();
+
   return (
-    <div className="sunflowers-layer" aria-hidden="true">
+    <div className="sunflowers-layer" aria-label="Floating sunflowers">
       {flowers.map((flower) => (
-        <span
+        <button
           key={flower.id}
+          type="button"
           className={`floating-sunflower ${flower.className}`}
           style={{ '--flower-size': flower.size }}
+          onClick={(event) => burst(event, 'flower')}
+          aria-label="Make sunflower sparkles"
         >
           🌻
-        </span>
+        </button>
       ))}
     </div>
   );

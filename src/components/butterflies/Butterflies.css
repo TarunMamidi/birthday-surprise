@@ -1,4 +1,69 @@
 
-@import url('./../../App.css');
+.butterflies-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+}
 
-/* Butterfly animation styles are defined in App.css. */
+.floating-butterfly {
+  position: absolute;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  font-size: var(--butterfly-size, 30px);
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  animation: butterfly-float 6s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.butterfly-one {
+  top: 15%;
+  left: 8%;
+}
+
+.butterfly-two {
+  top: 35%;
+  right: 8%;
+  animation-delay: -1s;
+}
+
+.butterfly-three {
+  top: 55%;
+  left: 5%;
+  animation-delay: -2s;
+}
+
+.butterfly-four {
+  top: 72%;
+  right: 12%;
+  animation-delay: -3s;
+}
+
+.butterfly-five {
+  top: 85%;
+  left: 45%;
+  animation-delay: -4s;
+}
+
+@keyframes butterfly-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate(12px, -18px) rotate(10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-butterfly {
+    animation: none;
+  }
+}
