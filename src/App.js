@@ -34,8 +34,9 @@ function App() {
         <div className="nav-links">
           <a href="#food-adventures">FoodAdventures 🍕</a>
           <a href="#memories">Memories 📸</a>
-          <a href="#food-games">Play our games 🎮</a>
           <a href="#letter">Birthday letter 💌</a>
+          <a href="#food-games">Play our games 🎮</a>
+          
         </div>
       </nav>
 
