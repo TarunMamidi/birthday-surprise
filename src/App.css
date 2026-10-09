@@ -453,7 +453,7 @@ a:focus-visible {
   animation-delay: -6s;
 }
 
-.fullscreen-button {
+.fullscreen-button{
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -482,20 +482,19 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
-.theme-button,
-.fullscreen-button {
-  padding: 9px 13px;
+.theme-button{
+  position: fixed;
+  right: 150px;
+  bottom: 20px;
+  z-index: 10000;
+  padding: 10px 16px;
   border: 1px solid #ead37c;
-  border-radius: 24px;
+  border-radius: 50px;
   background: #fff3bb;
   color: #49362b;
-  font-size: 13px;
-  white-space: nowrap;
+  font-size: 14px;
   cursor: pointer;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .theme-button:hover,
@@ -587,6 +586,8 @@ a:focus-visible {
     font-size: 12px;
   }
 }
+
+
 
 @media (prefers-reduced-motion: reduce) {
   .birthday-app,
@@ -820,3 +821,5 @@ a:focus-visible {
     animation-duration: 300ms;
   }
 }
+
+

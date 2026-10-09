@@ -23,6 +23,7 @@ function App() {
     setIsLoading(false);
   }, []);
 
+  // Keep the fullscreen button label in sync with browser state.
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(Boolean(document.fullscreenElement));
@@ -48,8 +49,8 @@ function App() {
       } else {
         await document.exitFullscreen();
       }
-    } catch (err) {
-      console.error('Fullscreen error:', err);
+    } catch (error) {
+      console.error('Fullscreen error:', error);
     }
   };
 
@@ -59,15 +60,20 @@ function App() {
 
   return (
     <div
-      className={`birthday-app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}
+      className={`birthday-app ${
+        isDarkMode ? 'dark-mode' : 'light-mode'
+      }`}
     >
+      {/* Floating decorations */}
       <Butterflies />
       <Sunflowers />
 
+      {/* Loading screen */}
       {isloading && (
         <LoadingScreen onComplete={finishLoading} />
       )}
 
+      {/* Navigation */}
       <nav className="navbar">
         <a href="#home" className="brand">
           little sunshine <span>☀️</span>
@@ -80,13 +86,16 @@ function App() {
           <a href="#food-games">Play our games 🎮</a>
         </div>
 
+        {/* Theme button on the left, fullscreen on the right */}
         <div className="navbar-actions">
           <button
             type="button"
             className="theme-button"
             onClick={toggleDarkMode}
             aria-label={
-              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+              isDarkMode
+                ? 'Switch to light mode'
+                : 'Switch to dark mode'
             }
             aria-pressed={isDarkMode}
           >
@@ -98,17 +107,21 @@ function App() {
             className="fullscreen-button"
             onClick={toggleFullscreen}
           >
-            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen ⛶'}
+            {isFullscreen
+              ? 'Exit Fullscreen'
+              : 'Fullscreen ⛶'}
           </button>
         </div>
       </nav>
 
+      {/* Website sections */}
       <Hero />
       <FoodAdventures />
       <Memories />
       <BirthdayLetter />
       <FoodGames />
 
+      {/* Footer */}
       <footer className="footer">
         <p>Made with 💛, memories, and a little bit of code.</p>
         <p>For someone who makes life brighter. ♡</p>
