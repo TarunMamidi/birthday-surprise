@@ -453,6 +453,149 @@ a:focus-visible {
   animation-delay: -6s;
 }
 
+.fullscreen-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border: 1px solid #ead37c;
+  border-radius: 24px;
+  background: #fff3bb;
+  color: #49362b;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.fullscreen-button:hover {
+  background: #f7d64a;
+  transform: scale(1.04);
+}
+
+
+/* Navbar buttons */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.theme-button,
+.fullscreen-button {
+  padding: 9px 13px;
+  border: 1px solid #ead37c;
+  border-radius: 24px;
+  background: #fff3bb;
+  color: #49362b;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.theme-button:hover,
+.fullscreen-button:hover {
+  background: #f7d64a;
+  transform: translateY(-1px);
+}
+
+.theme-button:focus-visible,
+.fullscreen-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Smooth theme transition */
+.birthday-app {
+  min-height: 100vh;
+  background: var(--cream, #fffaf0);
+  color: var(--brown, #49362b);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme variables */
+.birthday-app.dark-mode {
+  --yellow: #f7d64a;
+  --yellow-light: #3a3528;
+  --cream: #171717;
+  --brown: #f7edda;
+  --muted: #c3b9aa;
+
+  background: #171717;
+  color: #f7edda;
+  color-scheme: dark;
+}
+
+/* Main sections */
+.birthday-app.dark-mode .navbar,
+.birthday-app.dark-mode .footer,
+.birthday-app.dark-mode section {
+  background-color: #171717;
+  color: #f7edda;
+}
+
+/* Cards and content surfaces */
+.birthday-app.dark-mode .food-card,
+.birthday-app.dark-mode .memory-card,
+.birthday-app.dark-mode .letter-card,
+.birthday-app.dark-mode .game-card {
+  background-color: #242424;
+  color: #f7edda;
+  border-color: #484033;
+}
+
+/* Links and paragraphs */
+.birthday-app.dark-mode p,
+.birthday-app.dark-mode .nav-links a {
+  color: #d8cebd;
+}
+
+.birthday-app.dark-mode h1,
+.birthday-app.dark-mode h2,
+.birthday-app.dark-mode h3,
+.birthday-app.dark-mode .brand {
+  color: #fff0bd;
+}
+
+/* Navbar buttons in dark mode */
+.birthday-app.dark-mode .theme-button,
+.birthday-app.dark-mode .fullscreen-button {
+  background: #302d25;
+  color: #ffe9a0;
+  border-color: #71603a;
+}
+
+.birthday-app.dark-mode .theme-button:hover,
+.birthday-app.dark-mode .fullscreen-button:hover {
+  background: #49402a;
+}
+
+/* Mobile navbar */
+@media (max-width: 600px) {
+  .navbar-actions {
+    gap: 5px;
+  }
+
+  .theme-button,
+  .fullscreen-button {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birthday-app,
+  .theme-button,
+  .fullscreen-button {
+    transition: none;
+  }
+}
+
 @keyframes sunshine-butterfly-float {
   0% {
     opacity: 0;

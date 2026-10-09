@@ -1,7 +1,8 @@
 
 import './App.css';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
 import FoodAdventures from './components/food/Food';
 import Memories from './components/memories/Memories';
 import BirthdayLetter from './components/birthday/Birthday';
@@ -10,17 +11,58 @@ import LoadingScreen from './components/loading/Loading';
 import FoodGames from './components/foodgames/FoodGames';
 import Butterflies from './components/butterflies/Butterflies';
 import Sunflowers from './components/sunflowers/Sunflowers';
+
 function App() {
   const [isloading, setIsLoading] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(
+    Boolean(document.fullscreenElement)
+  );
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const finishLoading = useCallback(() => {
     setIsLoading(false);
   }, []);
 
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    };
+
+    document.addEventListener(
+      'fullscreenchange',
+      handleFullscreenChange
+    );
+
+    return () => {
+      document.removeEventListener(
+        'fullscreenchange',
+        handleFullscreenChange
+      );
+    };
+  }, []);
+
+  const toggleFullscreen = async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (err) {
+      console.error('Fullscreen error:', err);
+    }
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((previousMode) => !previousMode);
+  };
+
   return (
-    <div className="birthday-app">
+    <div
+      className={`birthday-app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}
+    >
       <Butterflies />
-      <Sunflowers/>
+      <Sunflowers />
 
       {isloading && (
         <LoadingScreen onComplete={finishLoading} />
@@ -36,7 +78,28 @@ function App() {
           <a href="#memories">Memories 📸</a>
           <a href="#letter">Birthday letter 💌</a>
           <a href="#food-games">Play our games 🎮</a>
-          
+        </div>
+
+        <div className="navbar-actions">
+          <button
+            type="button"
+            className="theme-button"
+            onClick={toggleDarkMode}
+            aria-label={
+              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            }
+            aria-pressed={isDarkMode}
+          >
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
+
+          <button
+            type="button"
+            className="fullscreen-button"
+            onClick={toggleFullscreen}
+          >
+            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen ⛶'}
+          </button>
         </div>
       </nav>
 
