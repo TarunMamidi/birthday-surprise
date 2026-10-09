@@ -304,16 +304,17 @@
 }
 
 
-@media (max-width: 430px) {
+/* iPhone touch and food-card layout */
+@media (max-width: 500px) {
   .food-deck {
     width: 100%;
     max-width: 410px;
-    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .food-main-card {
     width: 100%;
-    min-width: 0;
     -webkit-appearance: none;
     appearance: none;
     touch-action: manipulation;
@@ -322,5 +323,10 @@
   .food-card-details h3,
   .food-card-details p {
     overflow-wrap: anywhere;
+  }
+
+  .food-nav-button {
+    min-width: 44px;
+    min-height: 44px;
   }
 }

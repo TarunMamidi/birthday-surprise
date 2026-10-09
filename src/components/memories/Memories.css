@@ -326,16 +326,17 @@
 }
 
 
-@media (max-width: 430px) {
+/* iPhone touch and card layout */
+@media (max-width: 500px) {
   .memory-deck {
     width: 100%;
     max-width: 410px;
-    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .memory-main-card {
     width: 100%;
-    min-width: 0;
     -webkit-appearance: none;
     appearance: none;
     touch-action: manipulation;
@@ -344,5 +345,10 @@
   .memory-card-details h3,
   .memory-card-details p {
     overflow-wrap: anywhere;
+  }
+
+  .memory-nav-button {
+    min-width: 44px;
+    min-height: 44px;
   }
 }
