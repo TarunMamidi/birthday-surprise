@@ -1,0 +1,337 @@
+
+.birthday-surprise {
+  --surprise-gold: #f5c84c;
+  --surprise-cream: #fff9e9;
+  --surprise-brown: #62432e;
+
+  position: relative;
+  overflow: hidden;
+  padding: 90px 20px 110px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 20%, #fff0b9 0, transparent 28%),
+    radial-gradient(circle at 85% 75%, #ffe8a0 0, transparent 30%),
+    var(--surprise-cream);
+  color: var(--surprise-brown);
+}
+
+.surprise-heading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+  position: relative;
+  z-index: 2;
+}
+
+.surprise-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #a77a25;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.surprise-heading h2 {
+  margin: 0 0 15px;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: #80522b;
+}
+
+.surprise-heading p {
+  line-height: 1.8;
+}
+
+.surprise-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  isolation: isolate;
+}
+
+.envelope-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  animation: envelope-arrive 0.8s ease both;
+}
+
+.envelope {
+  position: relative;
+  width: min(300px, 75vw);
+  height: 190px;
+  perspective: 800px;
+  filter: drop-shadow(0 15px 18px #8d622526);
+}
+
+.envelope-letter {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #efd58e;
+  border-radius: 5px;
+  background: #fffdf6;
+  color: #80522b;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+.letter-heart {
+  color: #e5a84c;
+  font-size: 2rem;
+}
+
+.envelope-pocket {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background: #f5d47d;
+  clip-path: polygon(0 0, 50% 57%, 100% 0, 100% 100%, 0 100%);
+  border-radius: 5px;
+}
+
+.envelope-flap {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  background: #fbe7a9;
+  clip-path: polygon(0 0, 100% 0, 50% 64%);
+  transform-origin: top center;
+  transition: transform 0.6s ease;
+}
+
+.envelope-seal {
+  position: absolute;
+  z-index: 5;
+  top: 44%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff0bd;
+  border-radius: 50%;
+  background: #dba442;
+  color: white;
+  font-size: 1.35rem;
+  box-shadow: 0 3px 10px #a76d2433;
+}
+
+.surprise-button {
+  position: relative;
+  z-index: 6;
+  padding: 15px 26px;
+  border: 1px solid #e6bd54;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffeaa0, #f6cf58);
+  color: #62432e;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 18px #bc8c3026;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.surprise-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 11px 24px #bc8c3040;
+}
+
+.surprise-button:focus-visible {
+  outline: 3px solid #9c6a27;
+  outline-offset: 4px;
+}
+
+.surprise-letter {
+  position: relative;
+  z-index: 2;
+  width: min(680px, 100%);
+  box-sizing: border-box;
+  padding: clamp(25px, 6vw, 55px);
+  border: 1px solid #ecd59c;
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(
+      transparent,
+      transparent 34px,
+      #c9a86a14 35px
+    ),
+    #fffdf6;
+  box-shadow: 0 18px 55px #8b602526;
+  text-align: left;
+  animation: letter-reveal 0.9s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.letter-decoration {
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.3em;
+}
+
+.surprise-letter p {
+  color: #624b3a;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.surprise-letter .letter-greeting {
+  color: #8b5c2b;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+.surprise-letter .letter-ending {
+  margin-top: 30px;
+  color: #a56c22;
+  font-size: clamp(1.25rem, 4vw, 1.7rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.surprise-letter .letter-signoff {
+  margin-top: 25px;
+  font-style: italic;
+  text-align: right;
+}
+
+.replay-button {
+  display: block;
+  margin: 35px auto 0;
+}
+
+.surprise-particles {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.surprise-particle {
+  position: absolute;
+  left: var(--left);
+  bottom: -35px;
+  color: #e7b743;
+  font-size: var(--size);
+  opacity: 0;
+  animation: golden-float var(--duration) var(--delay) ease-out forwards;
+}
+
+@keyframes golden-float {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-390px) rotate(35deg) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes letter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes envelope-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Support your existing dark-mode toggle. */
+.birthday-app.dark-mode .birthday-surprise {
+  --surprise-cream: #211f1b;
+  --surprise-brown: #f7edda;
+  background:
+    radial-gradient(circle at 15% 20%, #4a3c22 0, transparent 28%),
+    radial-gradient(circle at 85% 75%, #44351e 0, transparent 30%),
+    #211f1b;
+  color: #f7edda;
+}
+
+.birthday-app.dark-mode .surprise-heading h2,
+.birthday-app.dark-mode .surprise-heading p {
+  color: #f7edda;
+}
+
+.birthday-app.dark-mode .surprise-letter {
+  background: #2b2924;
+  border-color: #665438;
+}
+
+.birthday-app.dark-mode .surprise-letter p {
+  color: #f4e9d7;
+}
+
+.birthday-app.dark-mode .surprise-letter .letter-ending {
+  color: #ffda78;
+}
+
+.birthday-app.dark-mode .envelope-letter {
+  background: #fdf6e5;
+}
+
+@media (max-width: 600px) {
+  .birthday-surprise {
+    padding: 65px 16px 75px;
+  }
+
+  .surprise-heading {
+    margin-bottom: 35px;
+  }
+
+  .surprise-stage {
+    min-height: 280px;
+  }
+
+  .surprise-letter {
+    padding: 25px 20px;
+  }
+
+  .surprise-letter p {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope-wrap,
+  .surprise-letter,
+  .surprise-particle {
+    animation: none;
+  }
+
+  .surprise-button,
+  .envelope-flap {
+    transition: none;
+  }
+}

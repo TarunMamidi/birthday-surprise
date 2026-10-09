@@ -351,7 +351,7 @@ function FoodGames() {
 
   return (
     <section className="food-games-section" id="food-games">
-      <p className="eyebrow">CHAPTER 04 · PLAY OUR MEMORIES</p>
+      <p className="eyebrow">CHAPTER 03 · PLAY OUR MEMORIES</p>
       <h2>
         Pick your craving, <span>play our story.</span>
       </h2>

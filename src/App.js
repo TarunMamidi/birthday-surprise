@@ -5,12 +5,12 @@ import { useCallback, useEffect, useState } from 'react';
 
 import FoodAdventures from './components/food/Food';
 import Memories from './components/memories/Memories';
-import BirthdayLetter from './components/birthday/Birthday';
 import Hero from './components/hero/Hero';
 import LoadingScreen from './components/loading/Loading';
 import FoodGames from './components/foodgames/FoodGames';
 import Butterflies from './components/butterflies/Butterflies';
 import Sunflowers from './components/sunflowers/Sunflowers';
+import BirthdaySurprise from './components/surprise/BirthdaySurprise';
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
@@ -82,7 +82,6 @@ function App() {
         <div className="nav-links">
           <a href="#food-adventures">FoodAdventures 🍕</a>
           <a href="#memories">Memories 📸</a>
-          <a href="#letter">Birthday letter 💌</a>
           <a href="#food-games">Play our games 🎮</a>
         </div>
 
@@ -118,7 +117,7 @@ function App() {
       <Hero />
       <FoodAdventures />
       <Memories />
-      <BirthdayLetter />
+      <BirthdaySurprise/>
       <FoodGames />
 
       {/* Footer */}
