@@ -302,3 +302,25 @@
     transition: none;
   }
 }
+
+
+@media (max-width: 430px) {
+  .food-deck {
+    width: 100%;
+    max-width: 410px;
+    min-width: 0;
+  }
+
+  .food-main-card {
+    width: 100%;
+    min-width: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+  }
+
+  .food-card-details h3,
+  .food-card-details p {
+    overflow-wrap: anywhere;
+  }
+}
