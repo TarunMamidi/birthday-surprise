@@ -1,0 +1,88 @@
+
+.sunflowers-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.floating-sunflower {
+  position: absolute;
+  display: block;
+  font-size: var(--flower-size, 24px);
+  opacity: 0.78;
+  transform-origin: center;
+  animation: sunflower-drift 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.sunflower-one {
+  top: 18%;
+  left: 3%;
+  animation-delay: 0s;
+}
+
+.sunflower-two {
+  top: 38%;
+  right: 4%;
+  animation-delay: -2s;
+}
+
+.sunflower-three {
+  top: 58%;
+  left: 6%;
+  animation-delay: -4s;
+}
+
+.sunflower-four {
+  top: 76%;
+  right: 7%;
+  animation-delay: -1s;
+}
+
+.sunflower-five {
+  top: 27%;
+  right: 15%;
+  animation-delay: -3s;
+}
+
+.sunflower-six {
+  top: 86%;
+  left: 20%;
+  animation-delay: -5s;
+}
+
+.sunflower-seven {
+  top: 48%;
+  right: 20%;
+  animation-delay: -2.5s;
+}
+
+@keyframes sunflower-drift {
+  0%, 100% {
+    transform: translateY(0) rotate(-12deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(12deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .sunflower-two,
+  .sunflower-five,
+  .sunflower-seven {
+    display: none;
+  }
+
+  .floating-sunflower {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-sunflower {
+    animation: none;
+  }
+}

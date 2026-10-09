@@ -9,7 +9,7 @@ import Hero from './components/hero/Hero';
 import LoadingScreen from './components/loading/Loading';
 import FoodGames from './components/foodgames/FoodGames';
 import Butterflies from './components/butterflies/Butterflies';
-
+import Sunflowers from './components/sunflowers/Sunflowers';
 function App() {
   const [isloading, setIsLoading] = useState(true);
 
@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="birthday-app">
       <Butterflies />
+      <Sunflowers/>
 
       {isloading && (
         <LoadingScreen onComplete={finishLoading} />
