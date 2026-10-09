@@ -11,6 +11,7 @@ import FoodGames from './components/foodgames/FoodGames';
 import Butterflies from './components/butterflies/Butterflies';
 import Sunflowers from './components/sunflowers/Sunflowers';
 import BirthdaySurprise from './components/surprise/BirthdaySurprise';
+import MusicPlayer from './components/music/MusicPlayer';
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
@@ -119,6 +120,7 @@ function App() {
       <Memories />
       <BirthdaySurprise/>
       <FoodGames />
+      <MusicPlayer/>
 
       {/* Footer */}
       <footer className="footer">
